@@ -1,28 +1,35 @@
 h1 {
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
 }
 
 .currentCity {
   color: #0d6efd;
+  font-size: 15px;
 }
 .weather {
   text-align: center;
-  font-size: 25px;
+  font-size: 15px;
   padding: 5px 0 5px;
   text-align: center;
   border-radius: 50%;
 }
 
 body {
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  display: block;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 26px rgb(32 32 32 / 57%);
+  max-width: 600px;
 }
 
 .box {
   border-radius: 0, 0 12px;
   color: #ffffff;
   border-color: #0d6efd;
-  font-size: 16px;
+  font-size: 15px;
   margin: 0;
   line-height: 22px;
   padding: 8px 16px;
@@ -42,18 +49,11 @@ body {
 }
 
 .info {
-  font-size: 20px;
+  font-size: 15px;
   padding: 0;
-  text-align: center;
+  text-align: right;
   border-radius: 50%;
   list-style: none;
-}
-
-.sunInfo {
-  font-size: 20px;
-  padding: 0;
-  text-align: center;
-  border-radius: 50%;
 }
 
 .footer {
