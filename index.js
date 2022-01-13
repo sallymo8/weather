@@ -2,9 +2,9 @@
 
 function search(event) {
   event.preventDefault();
-  let cityElement = document.querySelector("#currentCity");
-  let currentCity = document.querySelector("#city-input");
-  cityElement.innerHTML = currentCity.value;
+  let cityElement = document.querySelector("#city");
+  let city = document.querySelector("#city-input");
+  cityElement.innerHTML = city.value;
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
@@ -51,12 +51,12 @@ let currentMonth = months[date.getMonth()];
 let currentYear = date.getFullYear();
 let currentDate = date.getDate();
 
-h1.innerHTML = `Today is ${day}, ${currentMonth} ${currentDate}, ${currentYear}  ${hours}:${minutes}`;
+h1.innerHTML = `Last updated: ${day}, ${currentMonth} ${currentDate}, ${currentYear}  ${hours}:${minutes}`;
 
 // week 5 homework - search city
 
 function displayWeather(response) {
-  document.querySelector("#currentCity").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
