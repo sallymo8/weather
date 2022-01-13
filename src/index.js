@@ -9,10 +9,11 @@ function search(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-let currentDate = new Date();
+let date = new Date();
 let h1 = document.querySelector("h1");
 
 let dayIndex = date.getDay();
+
 let days = [
   "Sunday",
   "Monday",
@@ -51,7 +52,7 @@ let currentMonth = months[date.getMonth()];
 let currentYear = date.getFullYear();
 let currentDate = date.getDate();
 
-h1.innerHTML = `Last updated: ${day}, ${currentMonth} ${currentDate}, ${currentYear}  ${hours}:${minutes}`;
+h1.innerHTML = `Last updated: ${day} ${currentMonth} ${currentDate} ${currentYear} @ ${hours}:${minutes}`;
 
 // week 5 homework - search city
 
@@ -63,6 +64,14 @@ function displayWeather(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#windspeed").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  let currentWeatherIcon = response.data.weather[0].icon;
+  let currentWeatherIconElement = document.querySelector(
+    "#current-weather-icon"
+  );
+  currentWeatherIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
@@ -79,3 +88,25 @@ function searchCity(event) {
 
 let searchInput = document.querySelector("#search-form");
 searchInput.addEventListener("submit", searchCity);
+
+// convert C to F
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = convertTemperature(fahrenheitUnits.innerHTML);
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusUnits.innerHTML = toggleUnit(celsiusUnits.innerHTML);
+  fahrenheitUnits.innerHTML = toggleUnit(fahrenheitUnits.innerHTML);
+}
+
+function convertTemperature(newUnit) {
+  if (newUnit === "F") {
+    return (celsiusTemperature * 9) / 5 + 32;
+  } else {
+    return celsiusTemperature;
+  }
+}
+
+function toggleUnit(unit) {
+  return unit === "C" ? "F" : "C";
+}
