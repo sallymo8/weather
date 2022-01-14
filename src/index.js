@@ -57,7 +57,7 @@ h1.innerHTML = `Last updated: ${day} ${currentMonth} ${currentDate} ${currentYea
 // week 5 homework - search city
 
 function displayWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#h1").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -81,7 +81,7 @@ function searchCity(event) {
   event.preventDefault();
   let apiKey = "95fa8555a2dc7c5fe068dd93781a7dbe";
   let cityInput = document.querySelector("#city-input");
-  let city = cityInput.value;
+  let h1 = cityInput.value;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(displayWeather);
 }
@@ -93,10 +93,10 @@ searchInput.addEventListener("submit", searchCity);
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = convertTemperature(fahrenheitUnits.innerHTML);
+  let fahrenheitTemperature = convertTemperature(fahrenheitUnit.innerHTML);
   temperature.innerHTML = Math.round(fahrenheitTemperature);
-  celsiusUnits.innerHTML = toggleUnit(celsiusUnits.innerHTML);
-  fahrenheitUnits.innerHTML = toggleUnit(fahrenheitUnits.innerHTML);
+  celsiusUnit.innerHTML = toggleUnit(celsiusUnit.innerHTML);
+  fahrenheitUnit.innerHTML = toggleUnit(fahrenheitUnit.innerHTML);
 }
 
 function convertTemperature(newUnit) {

@@ -3,24 +3,17 @@ h1 {
   text-align: left;
 }
 
-body {
+.weather-app {
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  display: block;
-  margin: 20px auto;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 8px 8px 26px rgb(32 32 32 / 57%);
-  max-width: 600px;
-}
-
-.weather {
   text-align: center;
   font-size: 15px;
-  padding: 5px 0 5px;
+  padding: 30px;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 15px;
   max-width: 600px;
   margin: 0 auto;
+  display: block;
+  margin-top: 50px;
 }
 
 .box {
