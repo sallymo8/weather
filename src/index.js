@@ -52,7 +52,7 @@ let currentMonth = months[date.getMonth()];
 let currentYear = date.getFullYear();
 let currentDate = date.getDate();
 
-h1.innerHTML = `${day} @ ${hours}:${minutes}`;
+h1.innerHTML = `Last updated: ${day} @ ${hours}:${minutes}`;
 
 // week 5 homework - search city
 
@@ -119,4 +119,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
-search(`Orlando`);
+search(`London`);
