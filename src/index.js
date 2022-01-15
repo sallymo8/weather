@@ -52,7 +52,7 @@ let currentMonth = months[date.getMonth()];
 let currentYear = date.getFullYear();
 let currentDate = date.getDate();
 
-h1.innerHTML = `Last updated: ${day} ${currentMonth} ${currentDate} ${currentYear} @ ${hours}:${minutes}`;
+h1.innerHTML = `${day} @ ${hours}:${minutes}`;
 
 // week 5 homework - search city
 
@@ -91,22 +91,32 @@ searchInput.addEventListener("submit", searchCity);
 
 // convert C to F
 
-function showFahrenheitTemperature(event) {
+function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = convertTemperature(fahrenheitUnit.innerHTML);
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
-  celsiusUnit.innerHTML = toggleUnit(celsiusUnit.innerHTML);
-  fahrenheitUnit.innerHTML = toggleUnit(fahrenheitUnit.innerHTML);
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = Math.round((celciusTemperature * 9) / 5 + 32);
+  temperatureElement.innerHTML = fahrenheitTemperature;
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
-function convertTemperature(newUnit) {
-  if (newUnit === "F") {
-    return (celsiusTemperature * 9) / 5 + 32;
-  } else {
-    return celsiusTemperature;
-  }
+function displayCelciusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
 }
 
-function toggleUnit(unit) {
-  return unit === "C" ? "F" : "C";
-}
+let celciusTemperature = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
+
+search(`Orlando`);
