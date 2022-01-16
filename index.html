@@ -38,34 +38,39 @@
                 id="city-input"
               />
             </div>
-
             <div class="col-2">
-              <input type="submit" value="Search" />
+              <input type="submit" value="Search 🔎" />
             </div>
           </div>
         </form>
 
         <h1>Monday 10th January 10am</h1>
-
+        <br />
+           <span id="city"> London </span>
         <div class="row">
           <div class="col-6">
-            <span id="city"> </span>
-            <span class="temperature">° </span>
-            <span class="units">
-              <a href="#" class="active" id="celcius-link"> </a>
-              |
-              <a href="#" id="fahrenheit-link"> </a>
-            </span>
-
-            <span id="description"> </span>
-            <div class="col currentWeather">
-              <img
+           <div class="col currentWeather">
+             <img
                 src="http://openweathermap.org/img/wn/10d@2x.png"
                 id="current-weather-icon"
                 class="currentWeatherIcon"
               />
+            <span id="temperature"> 26 </span>
+            <span class="measurement" id="units">
+              <a href="#" class="active" id="celcius-link"> °C </a>
+              |
+              <a href="#" id="fahrenheit-link"> °F </a>
+            </span>
+
+            <br />
+
+            <span id="description"> </span>
+
+            
+              
             </div>
           </div>
+
           <div class="col-6">
             <ul>
               <li>
@@ -78,6 +83,7 @@
               </li>
             </ul>
           </div>
+</div>
 
           <hr />
           <br />

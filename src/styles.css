@@ -20,8 +20,13 @@ h1 {
 }
 
 .city {
-  font-size: 20px;
+  font-size: 50px;
   font-weight: 300;
+  text-align: left;
+}
+
+.temperature {
+  font-size: 30px;
 }
 
 ul {
@@ -47,4 +52,18 @@ ul {
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
+}
+
+.measurement {
+  position: relative;
+  font-size: 13px;
+}
+.active {
+  color: rgb(33, 33, 33);
+  text-decoration: none;
+  cursor: default;
+}
+
+.weather-description:first-letter {
+  text-transform: capitalize;
 }

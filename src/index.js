@@ -58,9 +58,13 @@ h1.innerHTML = `Last updated: ${day} @ ${hours}:${minutes}`;
 
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+}
+
+function displayTemperature(response) {
+  celciusTemperature = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celciusTemperature);
+
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#windspeed").innerHTML = Math.round(
     response.data.wind.speed
