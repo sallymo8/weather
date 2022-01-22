@@ -1,13 +1,13 @@
 // week 4 homework date & time
 
-function search(event) {
-  event.preventDefault();
-  let cityElement = document.querySelector("#city");
-  let city = document.querySelector("#city-input");
-  cityElement.innerHTML = city.value;
-}
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
+// function search(event) {
+//   event.preventDefault();
+//   let cityElement = document.querySelector("#city");
+//   let city = document.querySelector("#city-input");
+//   cityElement.innerHTML = city.value;
+// }
+// let searchForm = document.querySelector("#search-form");
+// searchForm.addEventListener("submit", search);
 
 let date = new Date();
 let h1 = document.querySelector("h1");
@@ -58,9 +58,6 @@ h1.innerHTML = `Last updated: ${day} @ ${hours}:${minutes}`;
 
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-}
-
-function displayTemperature(response) {
   celciusTemperature = response.data.main.temp;
   document.querySelector("#temperature").innerHTML =
     Math.round(celciusTemperature);
@@ -81,17 +78,43 @@ function displayTemperature(response) {
     response.data.weather[0].description;
 }
 
-function searchCity(event) {
+// function displayTemperature(response) {
+//   celciusTemperature = response.data.main.temp;
+//   console.log(celciusTemperature);
+//   document.querySelector("#temperature").innerHTML =
+//     Math.round(celciusTemperature);
+
+//   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+//   document.querySelector("#windspeed").innerHTML = Math.round(
+//     response.data.wind.speed
+//   );
+//   let currentWeatherIcon = response.data.weather[0].icon;
+//   let currentWeatherIconElement = document.querySelector(
+//     "#current-weather-icon"
+//   );
+//   currentWeatherIconElement.setAttribute(
+//     "src",
+//     `http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`
+//   );
+//   document.querySelector("#description").innerHTML =
+//     response.data.weather[0].description;
+// }
+
+function handleSubmit(event) {
   event.preventDefault();
-  let apiKey = "95fa8555a2dc7c5fe068dd93781a7dbe";
   let cityInput = document.querySelector("#city-input");
   let city = cityInput.value;
+  searchCity(city);
+}
+
+function searchCity(city) {
+  let apiKey = "95fa8555a2dc7c5fe068dd93781a7dbe";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(displayWeather);
 }
 
-let searchInput = document.querySelector("#search-form");
-searchInput.addEventListener("submit", searchCity);
+// let searchInput = document.querySelector("#search-form");
+// searchInput.addEventListener("submit", searchCity);
 
 // convert C to F
 
@@ -123,4 +146,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
-search(`London`);
+//search(`London`);
+searchCity("London");

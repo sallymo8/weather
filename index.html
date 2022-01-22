@@ -46,28 +46,26 @@
 
         <h1>Monday 10th January 10am</h1>
         <br />
-           <span id="city"> London </span>
+        <span id="city"> London </span>
         <div class="row">
           <div class="col-6">
-           <div class="col currentWeather">
-             <img
+            <div class="col currentWeather">
+              <img
                 src="http://openweathermap.org/img/wn/10d@2x.png"
                 id="current-weather-icon"
                 class="currentWeatherIcon"
+                width="45"
               />
-            <span id="temperature"> 26 </span>
-            <span class="measurement" id="units">
-              <a href="#" class="active" id="celcius-link"> °C </a>
-              |
-              <a href="#" id="fahrenheit-link"> °F </a>
-            </span>
+              <span id="temperature"> 26 </span>
+              <span class="measurement" id="units">
+                <a href="#" class="active" id="celcius-link"> °C </a>
+                |
+                <a href="#" id="fahrenheit-link"> °F </a>
+              </span>
 
-            <br />
+              <br />
 
-            <span id="description"> </span>
-
-            
-              
+              <span id="description"> </span>
             </div>
           </div>
 
@@ -83,35 +81,24 @@
               </li>
             </ul>
           </div>
-</div>
+        </div>
 
-          <hr />
-          <br />
-          <strong>Next 5 Day Forecast</strong>
-          <br />
-          <div class="row weather">
-            <div class="col">
-              Tues<br />
-              12℃ <br />🌧
+        <hr />
+        <br />
+        <div class="weather-forecast">
+          <div class="row">
+            <div class="col-2">
+              <div class="weather-forecast-date">Tues</div>
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="42"
+              />
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max"> 18° </span>
+                <span class="weather-forecast-temperature-min"> 12° </span>
+              </div>
             </div>
-            <div class="col">
-              Weds<br />
-              13℃ <br />🌦
-            </div>
-            <div class="col">
-              Thurs<br />
-              13℃ <br />
-              🌦
-            </div>
-            <div class="col">
-              Fri<br />
-              14℃ <br />
-              ☀️
-            </div>
-            <div class="col">
-              Sat<br />
-              14℃ <br />
-              ☀️
             </div>
           </div>
         </div>
@@ -119,10 +106,7 @@
           <a href="https://github.com/sallymo8/weather"
             >Open-source code on Github</a
           >
-          by Sally M and
-          <a href="https://romantic-carson-7455ca.netlify.app/"
-            >hosted on Netlify</a
-          >
+          by Sally M >
         </p>
       </div>
     </div>

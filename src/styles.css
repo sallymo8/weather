@@ -37,6 +37,10 @@ ul {
   line-height: 20px;
 }
 
+li {
+  text-align: center;
+}
+
 .button {
   text-align: center;
   border: none;
@@ -66,4 +70,18 @@ ul {
 
 .weather-description:first-letter {
   text-transform: capitalize;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  color: #000;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+  font-size: 13px;
 }
