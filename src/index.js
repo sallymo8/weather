@@ -62,7 +62,7 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `     
-
+   
             <div class="col-2">
               <div class="weather-forecast-date">${day} 
               </div>
@@ -83,9 +83,9 @@ function displayForecast() {
 
   forecastHTML =
     forecastHTML +
-    `     
+    `        
             <div class="col-2">
-              <div class="weather-forecast-date">Thur 
+              <div class="weather-forecast-date">${day} 
               </div>
               <img
                 src="http://openweathermap.org/img/wn/10d@2x.png"
@@ -105,6 +105,12 @@ function displayForecast() {
 }
 
 // week 5 homework - search city
+
+function getForecast(coordinates) {
+  let apiKey = "95fa8555a2dc7c5fe068dd93781a7dbe";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
 
 function displayWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -126,6 +132,8 @@ function displayWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+
+  getForecast(response.data.coord);
 }
 
 // function displayTemperature(response) {
@@ -198,4 +206,3 @@ celciusLink.addEventListener("click", displayCelciusTemperature);
 
 //search(`London`);
 searchCity("London");
-displayForecast();

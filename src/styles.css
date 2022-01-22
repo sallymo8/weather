@@ -20,7 +20,7 @@ h1 {
 }
 
 .city {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 300;
   text-align: left;
 }
@@ -75,6 +75,7 @@ li {
 .weather-forecast {
   text-align: center;
   margin-top: 20px;
+  color: #000;
 }
 
 .weather-forecast-date {
