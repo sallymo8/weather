@@ -52,7 +52,8 @@ let currentMonth = months[date.getMonth()];
 let currentYear = date.getFullYear();
 let currentDate = date.getDate();
 
-h1.innerHTML = `Last updated: ${day} @ ${hours}:${minutes}`;
+h1.innerHTML = `LAST UPDATED :
+${day} @ ${hours}:${minutes}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);

@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap"
       rel="stylesheet"
     />
 
@@ -31,7 +31,7 @@
             <div class="col-10">
               <input
                 type="search"
-                placeholder="Enter your city"
+                placeholder="Enter a city..."
                 autofocus="on"
                 autocomplete="off"
                 class="form-control shadow-sm"
@@ -54,10 +54,10 @@
                 src="http://openweathermap.org/img/wn/10d@2x.png"
                 id="current-weather-icon"
                 class="currentWeatherIcon"
-                width="50"
+                width="85"
               />
 
-              <span id="temperature"> 26 </span>
+              <span class="temperature" id="temperature"> 26 </span>
               <span class="measurement" id="units">
                 <a href="#" class="active" id="celcius-link"> °C </a>
                 |
@@ -66,23 +66,21 @@
 
               <br />
 
-              <span id="description"> </span>
+              <span class="description" id="description"> </span>
             </div>
           </div>
 
           <div class="col-6">
-            <ul>
-              <li>
-                Humidity:
-                <span id="humidity"></span>%
-              </li>
-              <li>
-                Windspeed:
-                <span id="windspeed"> </span>km/h
-              </li>
-            </ul>
+            <div class="weather-info">
+              Humidity:
+              <span id="humidity"></span>%
+              <br />
+              Windspeed:
+              <span id="windspeed"> </span>km/h
+            </div>
           </div>
         </div>
+        <br />
 
         <div class="weather-forecast" id="forecast">
           <div class="row">
@@ -100,6 +98,7 @@
             </div>
           </div>
         </div>
+        <br />
         <p class="footer">
           <a href="https://github.com/sallymo8/weather"
             >Open-source code on Github</a
